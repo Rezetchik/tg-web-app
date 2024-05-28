@@ -3,6 +3,8 @@ import style from './scss/App.module.scss';
 
 import Case from './components/CaseBox';
 
+const tg = window.Telegram.WebApp;
+
 const App = () => {
   React.useEffect(() => {
     tg.ready();
