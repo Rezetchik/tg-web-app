@@ -1,0 +1,126 @@
+.DivBox {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  .Box {
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .AnimateBox {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    animation: animateBox 1500ms forwards;
+  }
+  @keyframes animateBox {
+    0% {
+      transform: scale(1);
+      rotate: 3deg;
+    }
+    5% {
+      rotate: -3deg;
+    }
+    10% {
+      rotate: 3deg;
+    }
+    15% {
+      rotate: -3deg;
+    }
+    20% {
+      rotate: 3deg;
+    }
+    25% {
+      rotate: -3deg;
+    }
+    30% {
+      rotate: 3deg;
+    }
+    35% {
+      rotate: -3deg;
+    }
+    40% {
+      rotate: 3deg;
+    }
+    50% {
+      transform: scale(1.2) translate3d(0, 15%, 0);
+      rotate: 0deg;
+    }
+
+    100% {
+      transform: scale(1) translate3d(0, 25%, 0);
+    }
+  }
+
+  .HiddenBox {
+    animation: 1500ms hiddenBox 1200ms forwards;
+  }
+  @keyframes hiddenBox {
+    0% {
+    }
+    100% {
+      transform: translate3d(0, -25%, 0);
+    }
+  }
+}
+
+.DivStar {
+  display: block;
+  position: absolute;
+  width: 100%;
+  // top: 93.5vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+
+  .Star {
+    width: 95%;
+    display: none;
+  }
+
+  .AnimateStar {
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    opacity: 0;
+    animation: animateStar 1.3s linear forwards;
+    animation-delay: 0.8s;
+  }
+
+  @keyframes animateStar {
+    0% {
+      opacity: 0;
+      transform: scale(0) translate3d(0, -10.74%, 0);
+    }
+    70% {
+      opacity: 0.8;
+      transform: scale(0.86) translate3d(0, -10.74%, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translate3d(0, -15.74%, 0);
+    }
+  }
+
+  .HiddenStar {
+    animation: 1500ms hiddenStar 1200ms forwards;
+  }
+  @keyframes hiddenStar {
+    0% {
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+}

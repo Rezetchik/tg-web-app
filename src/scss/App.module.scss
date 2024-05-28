@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Tactic Sans';
+  src: url('../fonts/TacticSans-Bld.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.App {
+  min-height: 100vh;
+  max-width: 100vw;
+  background: url('../assets/background/backHeadFoot.svg') no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.FrameWrapper {
+  max-height: 100vh;
+  margin: 0 auto;
+  aspect-ratio: 1080 / 1920;
+  position: relative;
+}
+
+.Header {
+  position: absolute;
+  width: 100%;
+  padding: 0 6.94%;
+  top: 6.13%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  span {
+    display: inline-block;
+    font-family: 'Tactic Sans';
+    margin: auto 0;
+  }
+
+  .Text {
+    @media (orientation: portrait) {
+      font-size: clamp(12px, 2.69vw, 100px);
+    }
+    @media (orientation: landscape) {
+      font-size: clamp(12px, 1.5vh, 100px);
+    }
+  }
+
+  .TextRight,
+  .TextLeft {
+    @media (orientation: portrait) {
+      font-size: clamp(8px, 1.6vw, 100px);
+    }
+    @media (orientation: landscape) {
+      font-size: clamp(8px, 0.9vh, 100px);
+    }
+  }
+}

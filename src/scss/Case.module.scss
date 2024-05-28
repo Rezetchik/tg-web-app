@@ -1,0 +1,393 @@
+.Wrapper {
+  max-height: 100vh;
+  padding-top: 1px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  aspect-ratio: 1080 / 1920;
+  position: relative;
+}
+
+.Container {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 6vh 7%;
+  position: relative;
+
+  .AnimateHidden {
+    visibility: hidden;
+    width: 100%;
+  }
+
+  .Animate {
+    top: 32.31%;
+    width: 100%;
+    animation: animateContent 1500ms forwards;
+
+    @keyframes animateContent {
+      0% {
+        opacity: 0.2;
+        transform: scale(0) translate3d(0, -150%, 0);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) translate3d(0, -100%, 0);
+      }
+    }
+  }
+
+  .Content {
+    aspect-ratio: 932 / 425;
+    position: relative;
+    background-color: #9e6fff;
+    background-size: 100% 100%;
+    border: 0.89vh solid #00c7b1;
+  }
+}
+
+.ContentAnimate {
+  aspect-ratio: 932 / 425;
+  position: relative;
+  background-image: url('../assets/case/ruletka/fazi.svg');
+  background-color: #9e6fff;
+  background-position: 0%;
+  background-size: cover;
+  border: 0.89vh solid #00c7b1;
+
+  animation: 3000ms shakingContent forwards;
+
+  @keyframes shakingContent {
+    0% {
+      transform: translate3d(-0.5vh, -0.5vh, 0);
+      rotate: 1deg;
+    }
+    5% {
+      transform: translate3d(0.5vh, 0.5vh, 0);
+      rotate: -1deg;
+    }
+    9% {
+      background-position: 0%;
+    }
+    10% {
+      transform: translate3d(-0.5vh, -0.5vh, 0);
+      rotate: 1deg;
+      background-position: 25%;
+    }
+    15% {
+      transform: translate3d(0.5vh, 0.5vh, 0);
+      rotate: -1deg;
+    }
+    19% {
+      background-position: 25%;
+    }
+    20% {
+      transform: translate3d(-0.5vh, -0.5vh, 0);
+      rotate: 1deg;
+      background-position: 50%;
+    }
+    25% {
+      transform: translate3d(0.5vh, 0.5vh, 0);
+      rotate: -1deg;
+    }
+    29% {
+      background-position: 50%;
+    }
+    30% {
+      background-position: 75%;
+      background-color: #000000;
+      transform: translate3d(-0.5vh, -0.5vh, 0);
+      rotate: 1deg;
+    }
+    35% {
+      transform: translate3d(0.5vh, 0.5vh, 0);
+      rotate: -1deg;
+    }
+    39% {
+      background-position: 75%;
+      background-color: #000000;
+    }
+    40% {
+      background-position: 100%;
+      background-color: #000000;
+      transform: translate3d(-0.5vh, -0.5vh, 0);
+      rotate: 1deg;
+    }
+    45% {
+      transform: translate3d(0.5vh, 0.5vh, 0);
+      rotate: -1deg;
+    }
+    50% {
+      background-position: 100%;
+      background-color: #000000;
+      transform: translate3d(-0.5vh, -0.5vh, 0);
+      rotate: 1deg;
+    }
+    75% {
+      transform: scale(1) translate3d(0, 0, 0);
+      opacity: 1;
+    }
+    90% {
+      transform-origin: 50% 100%;
+      transform: scale(0.2, 0);
+      opacity: 0.2;
+      visibility: hidden;
+    }
+    100% {
+      visibility: hidden;
+      opacity: 0.2;
+      background-position: 100%;
+      background-color: #000000;
+    }
+  }
+}
+
+.RuletkaAnimate {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  animation: 1500ms shakingRuletka 300ms forwards;
+
+  @keyframes shakingRuletka {
+    0% {
+      transform-origin: 5% 0;
+      rotate: 1deg;
+    }
+    50% {
+      transform-origin: 5% 0;
+      rotate: 100deg;
+    }
+    70% {
+      transform-origin: 5% 0;
+      rotate: 50deg;
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 100vh, 0);
+      visibility: hidden;
+    }
+  }
+
+  .Box {
+    min-width: 30.56%;
+    margin: auto 1.5%;
+
+    img {
+      width: 100%;
+      filter: none !important;
+    }
+  }
+}
+
+.Ruletka {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+
+  .Box {
+    min-width: 30.56%;
+    margin: auto 1.5%;
+    transition: 15s cubic-bezier(0.5, 0.04, 0.36, 1);
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.BorderTop {
+  position: absolute;
+  top: 0;
+  left: -0.89vh;
+  width: calc(100% + 1.7vh);
+  height: 0.56%;
+  background-color: rgb(0, 0, 0);
+}
+
+.BorderBottom {
+  position: absolute;
+  bottom: 0;
+  left: -0.89vh;
+  width: calc(100% + 1.78vh);
+  height: 0.56%;
+  background-color: rgb(0, 0, 0);
+}
+
+.Cursor {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  height: 115.76%;
+  width: 0.21vh;
+  border: 0.21vh solid #000000;
+  background-color: #6affef;
+  box-sizing: content-box;
+}
+
+.CursorAnimate {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  height: 115.76%;
+  width: 0.21vh;
+  border: 0.21vh solid #000000;
+  background-color: #6affef;
+  box-sizing: content-box;
+
+  animation: 1500ms shakingCursor 500ms forwards;
+
+  @keyframes shakingCursor {
+    0% {
+      rotate: 1deg;
+    }
+    70% {
+      rotate: 25deg;
+    }
+    100% {
+      visibility: hidden;
+      transform: translate3d(30vh, 100vh, 0);
+    }
+  }
+}
+
+// .Button {
+//   display: block;
+//   margin: 10% auto;
+//   height: 30px;
+//   background-color: blue;
+//   border-radius: 15px;
+//   border: 0px;
+//   color: azure;
+// }
+
+// .Button:active {
+//   background-color: rgb(86, 86, 255);
+// }
+
+// .Button:focus {
+//   cursor: pointer;
+// }
+
+// .ButtonPassive {
+//   display: block;
+//   margin: 0 auto;
+//   height: 30px;
+//   background-color: rgb(0, 0, 157);
+//   border-radius: 15px;
+//   border: 0px;
+//   color: azure;
+// }
+
+.Pazl {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  animation: 1000ms shakingPazl linear forwards;
+
+  @keyframes shakingPazl {
+    0% {
+    }
+    100% {
+      visibility: hidden;
+      transform: scale(4, 10);
+    }
+  }
+
+  .PazlOne {
+    position: absolute;
+    bottom: -2%;
+    left: 64.24%;
+    width: 21.46%;
+  }
+
+  .PazlTwo {
+    position: absolute;
+    top: -5%;
+    right: 0%;
+    width: 17.17%;
+  }
+
+  .PazlThree {
+    position: absolute;
+    bottom: 5%;
+    left: -5%;
+    width: 21.24%;
+  }
+
+  .PazlFour {
+    position: absolute;
+    bottom: -5%;
+    left: -5%;
+    width: 12.66%;
+  }
+
+  .PazlFive {
+    position: absolute;
+    bottom: 30%;
+    left: -10%;
+    width: 2.15%;
+  }
+
+  .PazlSix {
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    width: 8.58%;
+  }
+
+  .PazlSeven {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 12.88%;
+  }
+
+  .PazlEight {
+    position: absolute;
+    top: -5%;
+    left: 7%;
+    width: 17.17%;
+  }
+
+  .PazlNine {
+    position: absolute;
+    top: 0%;
+    right: 16%;
+    width: 6.44%;
+  }
+
+  .PazlTen {
+    position: absolute;
+    bottom: 30%;
+    right: 0%;
+    width: 12.88%;
+  }
+
+  .PazlEleven {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 17.17%;
+  }
+}
+
+.Pazl > * {
+  animation: 1000ms shakingPazls forwards;
+
+  @keyframes shakingPazls {
+    0% {
+    }
+    100% {
+      transform: scale(calc(1 / 4), calc(1 / 10));
+    }
+  }
+}
+
+.PazlHidden {
+  display: none;
+}
