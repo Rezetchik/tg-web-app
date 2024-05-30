@@ -224,7 +224,7 @@ function Case() {
         setActive(true);
         setRuletka(true);
         slider.current.childNodes.forEach((e) => {
-          e.style = `transform: translateX(0px); transition: 0s`;
+          e.style = `transform: translate3d(0px, 0, 0); transition: 0s`;
         });
         setPazl(true);
         Perebor();
@@ -245,7 +245,7 @@ function Case() {
       // position -= 4388.958;
       position -= Math.random() * (4435 - 4350) + 4350;
       slider.current.childNodes.forEach((e) => {
-        e.style = `transform: translateX(${position}%)`;
+        e.style = `transform: translate3d(${position}%, 0, 0)`;
       });
       // setTimeout(() => {
       //   setFlag(true);
