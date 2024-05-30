@@ -13,6 +13,13 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 }
 
 .Frame {
@@ -41,6 +48,7 @@
     display: inline-block;
     font-family: 'Tactic Sans';
     margin: auto 0;
+    user-select: none;
   }
 
   .Text {

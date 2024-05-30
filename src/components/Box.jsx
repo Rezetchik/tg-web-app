@@ -5,9 +5,6 @@ import box from '../assets/case/suprizaBox/box.svg';
 import star from '../assets/case/suprizaBox/star.svg';
 
 const Box = ({ setActive, spin, clickBox, hidden, setClickBox }) => {
-  // const [clickBox, setClickBox] = React.useState(false);
-  // const [hidden, setHidden] = React.useState(false);
-
   const go = () => {
     setClickBox(true);
     setTimeout(() => {
@@ -16,13 +13,6 @@ const Box = ({ setActive, spin, clickBox, hidden, setClickBox }) => {
     setTimeout(() => {
       spin();
     }, 2300);
-    // setTimeout(() => {
-    //   setHidden(true);
-    // }, 19500);
-    // setTimeout(() => {
-    //   setClickBox(false);
-    //   setHidden(false);
-    // }, 21000);
   };
 
   return (

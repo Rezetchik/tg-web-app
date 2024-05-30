@@ -188,33 +188,30 @@ function Case() {
     setArr(data);
   }
 
-  const newPerebor = React.useCallback(() => {
-    const newArr = arr.slice(40);
-    const length = 40;
-    const numbers = [...Array(length)];
-    for (let i = 0; i < numbers.length; i += 1) {
-      const chance = Math.random();
-      let current = 0;
-      for (const item of items) {
-        if (current <= chance && chance < current + item.dropChance) {
-          numbers[i] = item;
-        }
-        current += item.dropChance;
-      }
-    }
-    newArr.forEach((e) => {
-      delete e.id;
-    });
-    const mass = newArr.concat(numbers);
-    const data = mass.map((item, index) => ({ ...item, id: index + 1 }));
-    setArr(data);
-  }, [arr]);
+  // const newPerebor = React.useCallback(() => {
+  //   const newArr = arr.slice(40);
+  //   const length = 40;
+  //   const numbers = [...Array(length)];
+  //   for (let i = 0; i < numbers.length; i += 1) {
+  //     const chance = Math.random();
+  //     let current = 0;
+  //     for (const item of items) {
+  //       if (current <= chance && chance < current + item.dropChance) {
+  //         numbers[i] = item;
+  //       }
+  //       current += item.dropChance;
+  //     }
+  //   }
+  //   newArr.forEach((e) => {
+  //     delete e.id;
+  //   });
+  //   const mass = newArr.concat(numbers);
+  //   const data = mass.map((item, index) => ({ ...item, id: index + 1 }));
+  //   setArr(data);
+  // }, [arr]);
 
   React.useEffect(() => {
     if (flag) {
-      // slider.current.childNodes.forEach((e) => {
-      //   e.style = `transform: translateX(0px); transition: 0s`;
-      // });
       // newPerebor();
       setFlag(false);
       setRuletka(false);
@@ -234,7 +231,7 @@ function Case() {
         setClickBox(false);
       }, 3500);
     }
-  }, [flag, newPerebor]);
+  }, [flag]);
 
   React.useEffect(() => {
     Perebor();
@@ -253,7 +250,7 @@ function Case() {
       });
       setTimeout(() => {
         setFlag(true);
-      }, 15000);
+      }, 15100);
     }
   };
 
