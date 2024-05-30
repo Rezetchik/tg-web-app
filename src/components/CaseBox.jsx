@@ -242,8 +242,8 @@ function Case() {
   const go = () => {
     if (flag === false) {
       setPrize(arr[41]);
-      // position -= 4388.958;
-      position -= Math.round(Math.random() * (4435 - 4350) + 4350);
+      position -= 4388.958;
+      // position -= Math.random() * (4435 - 4350) + 4350;
       slider.current.childNodes.forEach((e) => {
         e.style = `transform: translateX(${position}%)`;
       });
