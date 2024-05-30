@@ -24,7 +24,7 @@
     top: 32.31%;
     width: 100%;
     animation: animateContent 1500ms forwards;
-    // will-change: transform, opacity;
+    will-change: transform, opacity;
 
     @keyframes animateContent {
       0% {

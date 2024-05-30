@@ -224,7 +224,7 @@ function Case() {
         setActive(true);
         setRuletka(true);
         slider.current.childNodes.forEach((e) => {
-          e.style = `transform: translate3d(0px, 0, 0); transition: 0s`;
+          e.style = `transform: translateX(0px); transition: 0s`;
         });
         setPazl(true);
         Perebor();
@@ -243,9 +243,9 @@ function Case() {
     if (flag === false) {
       setPrize(arr[41]);
       // position -= 4388.958;
-      position -= Math.random() * (4435 - 4350) + 4350;
+      position -= Math.round(Math.random() * (4435 - 4350) + 4350);
       slider.current.childNodes.forEach((e) => {
-        e.style = `transform: translate3d(${position}%, 0, 0)`;
+        e.style = `transform: translateX(${position}%)`;
       });
       // setTimeout(() => {
       //   setFlag(true);
