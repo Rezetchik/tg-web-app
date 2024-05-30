@@ -247,9 +247,9 @@ function Case() {
       slider.current.childNodes.forEach((e) => {
         e.style = `transform: translateX(${position}%)`;
       });
-      setTimeout(() => {
-        setFlag(true);
-      }, 15100);
+      // setTimeout(() => {
+      //   setFlag(true);
+      // }, 15100);
     }
   };
 

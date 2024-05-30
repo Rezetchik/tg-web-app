@@ -57,7 +57,7 @@
   background-size: cover;
   border: 0.89vh solid #00c7b1;
   will-change: transform, rotate, background-position, opacity;
-  // animation: 3000ms shakingContent forwards;
+  animation: 3000ms shakingContent forwards;
 
   @keyframes shakingContent {
     0% {
