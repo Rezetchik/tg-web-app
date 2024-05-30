@@ -241,7 +241,6 @@ function Case() {
 
   const go = () => {
     if (flag === false) {
-      // setActive(false);
       setPrize(arr[41]);
       // position -= 4388.958;
       position -= Math.random() * (4435 - 4350) + 4350;
