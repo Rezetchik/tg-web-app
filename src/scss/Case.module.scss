@@ -191,8 +191,30 @@
     margin: auto 1.5%;
     // -webkit-transition: 15s cubic-bezier(0.5, 0.04, 0.36, 1);
     // transition: 15s cubic-bezier(0.5, 0.04, 0.36, 1);
-    -webkit-transition: 15s linear;
-    transition: 15s linear;
+    // -webkit-transition: 15s linear;
+    // transition: 15s linear;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .BoxAnimate {
+    min-width: 30.56%;
+    margin: auto 1.5%;
+    // -webkit-transition: 15s cubic-bezier(0.5, 0.04, 0.36, 1);
+    // transition: 15s cubic-bezier(0.5, 0.04, 0.36, 1);
+
+    animation: 15s shakingBox cubic-bezier(0.5, 0.04, 0.36, 1) forwards;
+
+    @keyframes shakingBox {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-4388.958%, 0, 0);
+      }
+    }
 
     img {
       width: 100%;

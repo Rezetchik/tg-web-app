@@ -210,28 +210,28 @@ function Case() {
   //   setArr(data);
   // }, [arr]);
 
-  React.useEffect(() => {
-    if (flag) {
-      // newPerebor();
-      setFlag(false);
-      setRuletka(false);
-      setTimeout(() => {
-        setPazl(false);
-        setHidden(true);
-      }, 1100);
-      setTimeout(() => {
-        setHidden(false);
-        setActive(true);
-        setRuletka(true);
-        slider.current.childNodes.forEach((e) => {
-          e.style = `transform: translateX(0px); transition: 0s`;
-        });
-        setPazl(true);
-        Perebor();
-        setClickBox(false);
-      }, 3500);
-    }
-  }, [flag]);
+  // React.useEffect(() => {
+  //   if (flag) {
+  //     // newPerebor();
+  //     setFlag(false);
+  //     setRuletka(false);
+  //     setTimeout(() => {
+  //       setPazl(false);
+  //       setHidden(true);
+  //     }, 1100);
+  //     setTimeout(() => {
+  //       setHidden(false);
+  //       setActive(true);
+  //       setRuletka(true);
+  //       slider.current.childNodes.forEach((e) => {
+  //         e.style = `transform: translateX(0px); transition: 0s`;
+  //       });
+  //       setPazl(true);
+  //       Perebor();
+  //       setClickBox(false);
+  //     }, 3500);
+  //   }
+  // }, [flag]);
 
   React.useEffect(() => {
     Perebor();
@@ -241,12 +241,14 @@ function Case() {
 
   const go = () => {
     if (flag === false) {
+      setFlag(true);
+
       setPrize(arr[41]);
       // position -= 4388.958;
-      position -= Math.random() * (4435 - 4350) + 4350;
-      slider.current.childNodes.forEach((e) => {
-        e.style = `transform: translateX(${position}%)`;
-      });
+      // position -= Math.random() * (4435 - 4350) + 4350;
+      // slider.current.childNodes.forEach((e) => {
+      //   e.style = `transform: translateX(${position}%)`;
+      // });
       // setTimeout(() => {
       //   setFlag(true);
       // }, 15100);
@@ -270,7 +272,7 @@ function Case() {
           <div className={ruletka ? style.Content : style.ContentAnimate}>
             <div className={ruletka ? style.Ruletka : style.RuletkaAnimate} ref={slider}>
               {arr.map(({ id, back, filter }) => (
-                <div key={id} className={style.Box}>
+                <div key={id} className={flag ? style.BoxAnimate : style.Box}>
                   <img src={back} alt="value" style={{ filter: filter }} />
                 </div>
               ))}
