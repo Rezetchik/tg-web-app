@@ -245,8 +245,8 @@ function Case() {
 
       setPrize(arr[41]);
       // position -= 4388.958;
-      // position -= 100;
-      position -= Math.random() * (4435 - 4350) + 4350;
+      position -= 3000;
+      // position -= Math.random() * (4435 - 4350) + 4350;
       slider.current.childNodes.forEach((e) => {
         e.style = `transform: translate3d(${position}%, 0, 0); -webkit-transform: translate3d(${position}%,0,0);`;
       });
