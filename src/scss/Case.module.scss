@@ -36,10 +36,6 @@
         transform: scale(1) translate3d(0, -100%, 0);
       }
     }
-
-    .Cursor {
-      z-index: 3;
-    }
   }
 
   .Content {
@@ -222,15 +218,22 @@
 .Cursor {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
+  bottom: -9%;
   left: 50%;
   height: 115.76%;
-  width: 0.21vh;
-  border: 0.21vh solid #000000;
+
   background-color: #6affef;
   box-sizing: content-box;
-  z-index: 2;
-  // transform: translateZ(0);
+  transform: translateZ(0);
+
+  @media (orientation: portrait) {
+    width: 0.25vw;
+    border: 0.25vw solid #000000;
+  }
+  @media (orientation: landscape) {
+    width: 0.21vh;
+    border: 0.21vh solid #000000;
+  }
 }
 
 .CursorAnimate {
