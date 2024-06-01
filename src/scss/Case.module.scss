@@ -189,8 +189,10 @@
   .Box {
     min-width: 30.56%;
     margin: auto 1.5%;
-    -webkit-transition: 15s cubic-bezier(0.5, 0.04, 0.36, 1);
-    transition: 15s cubic-bezier(0.5, 0.04, 0.36, 1);
+    -webkit-transition: -webkit-transform 15s cubic-bezier(0.5, 0.04, 0.36, 1);
+    transition: transform 15s cubic-bezier(0.5, 0.04, 0.36, 1);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
     -webkit-animation-fill-mode: forwards;
 
     img {
