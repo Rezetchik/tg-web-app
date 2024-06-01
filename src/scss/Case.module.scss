@@ -24,7 +24,6 @@
     top: 32.31%;
     width: 100%;
     animation: animateContent 1500ms forwards;
-    will-change: transform, opacity;
 
     @keyframes animateContent {
       0% {
@@ -227,6 +226,7 @@
   border: 0.21vh solid #000000;
   background-color: #6affef;
   box-sizing: content-box;
+  will-change: z-index;
   z-index: 2;
 }
 
