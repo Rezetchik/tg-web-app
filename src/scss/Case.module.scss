@@ -36,6 +36,10 @@
         transform: scale(1) translate3d(0, -100%, 0);
       }
     }
+
+    .Cursor {
+      z-index: 3;
+    }
   }
 
   .Content {
@@ -230,6 +234,7 @@
   box-sizing: content-box;
   will-change: z-index;
   z-index: 2;
+  transform: translateZ(0);
 }
 
 .CursorAnimate {

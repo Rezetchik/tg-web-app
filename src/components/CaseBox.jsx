@@ -150,7 +150,6 @@ function Case() {
   const [pazl, setPazl] = React.useState(true);
   const [clickBox, setClickBox] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
-  const elementRef = React.useRef(null);
 
   function Perebor() {
     const length = 44;
@@ -235,9 +234,6 @@ function Case() {
   // }, [flag]);
 
   React.useEffect(() => {
-    if (elementRef.current) {
-      elementRef.current.style.zIndex = 2;
-    }
     Perebor();
   }, []);
 
@@ -284,11 +280,7 @@ function Case() {
             </div>
             <div className={style.BorderTop}></div>
             <div className={style.BorderBottom}></div>
-            <div
-              ref={elementRef}
-              style={{ zIndex: 1 }}
-              className={ruletka ? style.Cursor : style.CursorAnimate}
-            ></div>
+            <div className={ruletka ? style.Cursor : style.CursorAnimate}></div>
             <div className={pazl ? style.PazlHidden : style.Pazl}>
               <img className={style.PazlOne} src={pazlOne} alt="Pazl" />
               <img className={style.PazlTwo} src={pazlTwo} alt="Pazl" />
