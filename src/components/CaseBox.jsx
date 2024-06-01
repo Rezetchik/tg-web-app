@@ -273,7 +273,7 @@ function Case() {
             <div className={ruletka ? style.Ruletka : style.RuletkaAnimate} ref={slider}>
               {arr.map(({ id, back, filter }) => (
                 <div key={id} className={style.Box}>
-                  <img src={back} alt="value" style={{ filter: filter, 'will-change': 'filter' }} />
+                  <img src={back} alt="value" style={{ filter: filter }} />
                 </div>
               ))}
             </div>
