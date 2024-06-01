@@ -185,12 +185,14 @@
   display: flex;
   overflow: hidden;
   height: 100%;
+  perspective: 1000px;
 
   .Box {
     min-width: 30.56%;
     margin: auto 1.5%;
     // -webkit-transition: 15s cubic-bezier(0.5, 0.04, 0.36, 1);
     transition: 15s cubic-bezier(0.5, 0.04, 0.36, 1);
+    backface-visibility: hidden;
 
     img {
       width: 100%;
