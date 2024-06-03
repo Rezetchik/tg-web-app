@@ -228,8 +228,7 @@ function Case() {
             if (startTime === null) {
               startTime = time;
             }
-            const progress = (time - startTime) / 2200;
-            console.log(progress);
+            const progress = (time - startTime) / 2500;
             if (progress < 1) {
               requestAnimationFrame(frameFinal);
             } else {
