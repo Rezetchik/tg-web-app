@@ -150,6 +150,7 @@ function Case() {
   const [pazl, setPazl] = React.useState(true);
   const [clickBox, setClickBox] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
+  const content = React.useRef(null);
 
   function Perebor() {
     const length = 44;
@@ -238,6 +239,7 @@ function Case() {
               slider.current.childNodes.forEach((e) => {
                 e.style = `transform: translateX(0px); transition: 0s`;
               });
+              content.current.style.transform = `scale(1, 1)`;
               setPazl(true);
               Perebor();
               setClickBox(false);
@@ -246,6 +248,9 @@ function Case() {
           setPazl(false);
           setHidden(true);
           requestAnimationFrame(frameFinal);
+        }
+        if (progress > 0.75 && progress < 1) {
+          content.current.style.transform = `scale(0.2, 0)`;
         }
       }
       requestAnimationFrame(frame);
@@ -342,6 +347,7 @@ function Case() {
           setFlag(true);
         }
       }
+      // setFlag(true);
       requestAnimationFrame(animate);
     }
     anim();
@@ -361,7 +367,7 @@ function Case() {
           setClickBox={setClickBox}
         />
         <div className={active ? style.AnimateHidden : style.Animate}>
-          <div className={ruletka ? style.Content : style.ContentAnimate}>
+          <div className={ruletka ? style.Content : style.ContentAnimate} ref={content}>
             <div className={ruletka ? style.Ruletka : style.RuletkaAnimate} ref={slider}>
               {arr.map(({ id, back, filter }) => (
                 <div key={id} className={style.Box}>

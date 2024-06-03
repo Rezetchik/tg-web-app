@@ -93,6 +93,7 @@
     }
     29% {
       background-position: 50%;
+      background-color: #9e6fff;
     }
     30% {
       background-position: 75%;
@@ -130,7 +131,7 @@
     }
     90% {
       transform-origin: 50% 100%;
-      transform: scale(0.2, 0);
+      // transform: scale(0.2, 0);
       opacity: 0.2;
       visibility: hidden;
     }
