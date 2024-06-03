@@ -6,13 +6,39 @@ import star from '../assets/case/suprizaBox/star.svg';
 
 const Box = ({ setActive, spin, clickBox, hidden, setClickBox }) => {
   const go = () => {
+    let startTime = null;
     setClickBox(true);
-    setTimeout(() => {
-      setActive(false);
-    }, 900);
-    setTimeout(() => {
-      spin();
-    }, 2300);
+    // setTimeout(() => {
+    //   setActive(false);
+    // }, 900);
+    // setTimeout(() => {
+    //   spin();
+    // }, 2300);
+    function activnost(time) {
+      if (startTime === null) {
+        startTime = time;
+      }
+      const progress = (time - startTime) / 900;
+      if (progress < 1) {
+        requestAnimationFrame(activnost);
+      } else {
+        startTime = null;
+        function spinGo(time) {
+          if (startTime === null) {
+            startTime = time;
+          }
+          const progress = (time - startTime) / 1400;
+          if (progress < 1) {
+            requestAnimationFrame(spinGo);
+          } else {
+            spin();
+          }
+        }
+        setActive(false);
+        requestAnimationFrame(spinGo);
+      }
+    }
+    requestAnimationFrame(activnost);
   };
 
   return (
