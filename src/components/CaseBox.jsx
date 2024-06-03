@@ -249,9 +249,18 @@ function Case() {
           setHidden(true);
           requestAnimationFrame(frameFinal);
         }
-        // if (progress > 0.75 && progress < 1) {
-        //   content.current.style.transform = `scale(0.2)`;
-        // }
+        if (progress > 0.1 && progress < 0.35) {
+          content.current.style.backgroundPosition = `25%`;
+        }
+        if (progress > 0.35 && progress < 0.65) {
+          content.current.style.backgroundPosition = `50%`;
+        }
+        if (progress > 0.65 && progress < 0.95) {
+          content.current.style.backgroundPosition = `75%`;
+        }
+        if (progress > 0.95 && progress < 1) {
+          content.current.style.backgroundPosition = `100%`;
+        }
       }
       requestAnimationFrame(frame);
     }

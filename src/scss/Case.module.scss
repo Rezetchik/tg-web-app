@@ -68,36 +68,38 @@
       rotate: -1deg;
     }
     9% {
-      background-position: 0%;
+      background-color: #9e6fff;
+      // background-position: 0%;
     }
     10% {
+      background-color: #000000;
       transform: translate3d(-0.5vh, -0.5vh, 0);
       rotate: 1deg;
-      background-position: 25%;
+      // background-position: 25%;
     }
     15% {
       transform: translate3d(0.5vh, 0.5vh, 0);
       rotate: -1deg;
     }
     19% {
-      background-position: 25%;
+      // background-position: 25%;
     }
     20% {
       transform: translate3d(-0.5vh, -0.5vh, 0);
       rotate: 1deg;
-      background-position: 50%;
+      // background-position: 50%;
     }
     25% {
       transform: translate3d(0.5vh, 0.5vh, 0);
       rotate: -1deg;
     }
     29% {
-      background-position: 50%;
-      background-color: #9e6fff;
+      // background-position: 50%;
+      // background-color: #9e6fff;
     }
     30% {
-      background-position: 75%;
-      background-color: #000000;
+      // background-position: 75%;
+      // background-color: #000000;
       transform: translate3d(-0.5vh, -0.5vh, 0);
       rotate: 1deg;
     }
@@ -106,11 +108,11 @@
       rotate: -1deg;
     }
     39% {
-      background-position: 75%;
+      // background-position: 75%;
       background-color: #000000;
     }
     40% {
-      background-position: 100%;
+      // background-position: 100%;
       background-color: #000000;
       transform: translate3d(-0.5vh, -0.5vh, 0);
       rotate: 1deg;
@@ -120,7 +122,7 @@
       rotate: -1deg;
     }
     50% {
-      background-position: 100%;
+      // background-position: 100%;
       background-color: #000000;
       transform: translate3d(-0.5vh, -0.5vh, 0);
       rotate: 1deg;
@@ -131,14 +133,14 @@
     }
     90% {
       transform-origin: 50% 100%;
-      transform: scale(0.2);
+      transform: translate3d(0, 3vh, 0) scale(0.2);
       opacity: 0.2;
       visibility: hidden;
     }
     100% {
       visibility: hidden;
       opacity: 0.2;
-      background-position: 100%;
+      // background-position: 100%;
       background-color: #000000;
     }
   }
