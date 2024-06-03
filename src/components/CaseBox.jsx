@@ -210,50 +210,142 @@ function Case() {
   //   setArr(data);
   // }, [arr]);
 
-  // React.useEffect(() => {
-  //   if (flag) {
-  //     // newPerebor();
-  //     setFlag(false);
-  //     setRuletka(false);
-  //     setTimeout(() => {
-  //       setPazl(false);
-  //       setHidden(true);
-  //     }, 1100);
-  //     setTimeout(() => {
-  //       setHidden(false);
-  //       setActive(true);
-  //       setRuletka(true);
-  //       slider.current.childNodes.forEach((e) => {
-  //         e.style = `transform: translateX(0px); transition: 0s`;
-  //       });
-  //       setPazl(true);
-  //       Perebor();
-  //       setClickBox(false);
-  //     }, 3500);
-  //   }
-  // }, [flag]);
+  React.useEffect(() => {
+    if (flag) {
+      // newPerebor();
+      setFlag(false);
+      setRuletka(false);
+      function frame(time) {
+        if (startTime === null) {
+          startTime = time;
+        }
+        const progress = (time - startTime) / 1100;
+        if (progress < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          startTime = null;
+          function frameFinal(time) {
+            if (startTime === null) {
+              startTime = time;
+            }
+            const progress = (time - startTime) / 2200;
+            console.log(progress);
+            if (progress < 1) {
+              requestAnimationFrame(frameFinal);
+            } else {
+              setHidden(false);
+              setActive(true);
+              setRuletka(true);
+              slider.current.childNodes.forEach((e) => {
+                e.style = `transform: translateX(0px); transition: 0s`;
+              });
+              setPazl(true);
+              Perebor();
+              setClickBox(false);
+            }
+          }
+          setPazl(false);
+          setHidden(true);
+          requestAnimationFrame(frameFinal);
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+    // if (flag) {
+    //   setFlag(false);
+    //   setRuletka(false);
+    //   setTimeout(() => {
+    //     setPazl(false);
+    //     setHidden(true);
+    //   }, 1100);
+    //   setTimeout(() => {
+    //     setHidden(false);
+    //     setActive(true);
+    //     setRuletka(true);
+    //     slider.current.childNodes.forEach((e) => {
+    //       e.style = `transform: translateX(0px); transition: 0s`;
+    //     });
+    //     setPazl(true);
+    //     Perebor();
+    //     setClickBox(false);
+    //   }, 3500);
+    // }
+  }, [flag]);
 
   React.useEffect(() => {
     Perebor();
   }, []);
 
   let position = 0;
+  let startTime = null;
 
   const go = () => {
-    if (flag === false) {
-      setFlag(true);
-
-      setPrize(arr[41]);
-      // position -= 4388.958;
-      position -= 2000;
-      // position -= Math.random() * (4435 - 4350) + 4350;
-      slider.current.childNodes.forEach((e) => {
-        e.style = `transform: translateX(${position}px)`;
-      });
-      // setTimeout(() => {
-      //   setFlag(true);
-      // }, 15100);
+    // if (flag === false) {
+    //   setPrize(arr[41]);
+    //   const elementWidth = slider.current.childNodes[0].offsetWidth;
+    //   const elementWidthMargin = slider.current.offsetWidth * 0.03;
+    //   const translateAmountMin = (elementWidthMargin + elementWidth) * 40 - elementWidth * 0.3;
+    //   const translateAmountMax = (elementWidthMargin + elementWidth) * 40 + elementWidth * 0.3;
+    //   position -= Math.random() * (translateAmountMax - translateAmountMin) + translateAmountMin;
+    //   // position -= Math.random() * (4435 - 4350) + 4350;
+    //   slider.current.childNodes.forEach((e) => {
+    //     e.style = `transform: translateX(${position}px)`;
+    //   });
+    //   setTimeout(() => {
+    //     setFlag(true);
+    //   }, 15000);
+    // }
+    function anim() {
+      const elementWidth = slider.current.childNodes[0].offsetWidth;
+      const elementWidthMargin = slider.current.offsetWidth * 0.03;
+      const translateAmountMin = (elementWidthMargin + elementWidth) * 40 - elementWidth * 0.3;
+      const translateAmountMax = (elementWidthMargin + elementWidth) * 40 + elementWidth * 0.3;
+      position = Math.random() * (translateAmountMax - translateAmountMin) + translateAmountMin;
+      function cubicBezier(x1, y1, x2, y2) {
+        if (!(x1 >= 0 && x1 <= 1 && x2 >= 0 && x2 <= 1))
+          throw new Error(
+            `CubicBezier x1 & x2 values must be { 0 < x < 1 }, got { x1 : ${x1}, x2: ${x2} }`,
+          );
+        const ax = 1.0 - (x2 = 3.0 * (x2 - x1) - (x1 *= 3.0)) - x1,
+          ay = 1.0 - (y2 = 3.0 * (y2 - y1) - (y1 *= 3.0)) - y1;
+        let i = 0,
+          r = 0.0,
+          s = 0.0,
+          d = 0.0,
+          x = 0.0;
+        return (t) => {
+          for (r = t, i = 0; 32 > i; i++)
+            if (1e-5 > Math.abs((x = r * (r * (r * ax + x2) + x1) - t)))
+              return r * (r * (r * ay + y2) + y1);
+            else if (1e-5 > Math.abs((d = r * (r * ax * 3.0 + x2 * 2.0) + x1))) break;
+            else r -= x / d;
+          if ((s = 0.0) > (r = t)) return 0;
+          else if ((d = 1.0) < r) return 1;
+          while (d > s)
+            if (1e-5 > Math.abs((x = r * (r * (r * ax + x2) + x1)) - t)) break;
+            else t > x ? (s = r) : (d = r), (r = 0.5 * (d - s) + s);
+          return r * (r * (r * ay + y2) + y1);
+        };
+      }
+      function animate(time) {
+        if (startTime === null) {
+          startTime = time;
+        }
+        const progress = (time - startTime) / 15000;
+        if (progress < 1) {
+          const positionCurrent = cubicBezier(0.5, 0.04, 0.36, 1)(progress) * position;
+          slider.current.childNodes.forEach((e) => {
+            e.style.transform = `translateX(${-positionCurrent}px)`;
+          });
+          requestAnimationFrame(animate);
+        } else {
+          setPrize(arr[41]);
+          setFlag(true);
+        }
+      }
+      requestAnimationFrame(animate);
     }
+    anim();
   };
 
   // console.log(prize);
