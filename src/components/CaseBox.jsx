@@ -239,7 +239,7 @@ function Case() {
               slider.current.childNodes.forEach((e) => {
                 e.style = `transform: translateX(0px); transition: 0s`;
               });
-              content.current.style.transform = `scale(1, 1)`;
+              // content.current.style.transform = `scale(1, 1)`;
               setPazl(true);
               Perebor();
               setClickBox(false);
@@ -249,9 +249,9 @@ function Case() {
           setHidden(true);
           requestAnimationFrame(frameFinal);
         }
-        if (progress > 0.75 && progress < 1) {
-          content.current.style.transform = `scale(0.2, 0)`;
-        }
+        // if (progress > 0.75 && progress < 1) {
+        //   content.current.style.transform = `scale(0.2, 0)`;
+        // }
       }
       requestAnimationFrame(frame);
     }

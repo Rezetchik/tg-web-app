@@ -131,7 +131,8 @@
     }
     90% {
       transform-origin: 50% 100%;
-      // transform: scale(0.2, 0);
+      -webkit-transform: scale(0.2, 0);
+      transform: scale(0.2, 0);
       opacity: 0.2;
       visibility: hidden;
     }
