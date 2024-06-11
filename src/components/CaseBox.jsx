@@ -221,7 +221,7 @@ function Case() {
         if (startTime === null) {
           startTime = time;
         }
-        const progress = (time - startTime) / 100;
+        const progress = (time - startTime) / 150;
         if (progress < 1) {
           requestAnimationFrame(frame);
           back = back + 25;
@@ -234,11 +234,11 @@ function Case() {
             content.current.style.backgroundPosition = `${back / 2}%`;
           }
         } else {
-          content.current.style.backgroundPosition = `100%`;
           startTime = null;
           function frameFinal(time) {
             if (startTime === null) {
               startTime = time;
+              content.current.style.backgroundPosition = `100%`;
             }
             const progress = (time - startTime) / 2500;
             if (progress < 1) {
