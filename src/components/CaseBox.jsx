@@ -221,7 +221,7 @@ function Case() {
         if (startTime === null) {
           startTime = time;
         }
-        const progress = (time - startTime) / 150;
+        const progress = (time - startTime) / 200;
         if (progress < 1) {
           requestAnimationFrame(frame);
           back = back + 25;
@@ -356,7 +356,7 @@ function Case() {
         if (startTime === null) {
           startTime = time;
         }
-        const progress = (time - startTime) / 1500;
+        const progress = (time - startTime) / 15000;
         if (progress < 1) {
           const positionCurrent = cubicBezier(0.5, 0.04, 0.36, 1)(progress) * position;
           slider.current.childNodes.forEach((e) => {

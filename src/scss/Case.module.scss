@@ -142,7 +142,7 @@
   overflow: hidden;
   height: 100%;
   // animation: 1500ms shakingRuletka 300ms forwards;
-  animation: 75ms shakingRuletka forwards;
+  animation: 200ms shakingRuletka forwards;
 
   // @keyframes shakingRuletka {
   //   0% {
@@ -260,7 +260,7 @@
     border: 0.21vh solid #000000;
   }
 
-  animation: 75ms shakingCursor forwards;
+  animation: 200ms shakingCursor forwards;
 
   @keyframes shakingCursor {
     0% {
