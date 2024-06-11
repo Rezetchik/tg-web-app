@@ -250,6 +250,7 @@ function Case() {
               slider.current.childNodes.forEach((e) => {
                 e.style = `transform: translateX(0px); transition: 0s`;
               });
+              content.current.style.backgroundPosition = `0%`;
               // content.current.style.transform = `scale(1)`;
               setPazl(true);
               Perebor();
@@ -355,7 +356,7 @@ function Case() {
         if (startTime === null) {
           startTime = time;
         }
-        const progress = (time - startTime) / 15000;
+        const progress = (time - startTime) / 1500;
         if (progress < 1) {
           const positionCurrent = cubicBezier(0.5, 0.04, 0.36, 1)(progress) * position;
           slider.current.childNodes.forEach((e) => {
@@ -387,7 +388,11 @@ function Case() {
           setClickBox={setClickBox}
         />
         <div className={active ? style.AnimateHidden : style.Animate}>
-          <div className={ruletka ? style.Content : style.ContentAnimate} ref={content}>
+          <div
+            className={ruletka ? style.Content : style.ContentAnimate}
+            ref={content}
+            style={{ backgroundPosition: '0%' }}
+          >
             <div className={ruletka ? style.Ruletka : style.RuletkaAnimate} ref={slider}>
               {arr.map(({ id, back, filter }) => (
                 <div key={id} className={style.Box}>
