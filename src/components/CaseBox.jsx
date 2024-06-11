@@ -224,15 +224,15 @@ function Case() {
         const progress = (time - startTime) / 200;
         if (progress < 1) {
           requestAnimationFrame(frame);
-          back = back + 25;
-          if (back % 2 == 0 && back <= 200) {
-            if (back == 50) {
-              // console.log('color');
-              // content.current.style.backgroundColor = `#000000`;
-            }
-            // console.log(back);
-            content.current.style.backgroundPosition = `${back / 2}%`;
-          }
+          // back = back + 25;
+          // if (back % 2 == 0 && back <= 200) {
+          //   if (back == 50) {
+          //     // console.log('color');
+          //     // content.current.style.backgroundColor = `#000000`;
+          //   }
+          //   // console.log(back);
+          //   content.current.style.backgroundPosition = `${back / 2}%`;
+          // }
         } else {
           startTime = null;
           function frameFinal(time) {
@@ -261,18 +261,18 @@ function Case() {
           setHidden(true);
           requestAnimationFrame(frameFinal);
         }
-        // if (progress > 0 && progress < 0.25) {
-        //   content.current.style.backgroundPosition = `25%`;
-        // }
-        // if (progress > 0.25 && progress < 0.55) {
-        //   content.current.style.backgroundPosition = `50%`;
-        // }
-        // if (progress > 0.55 && progress < 0.8) {
-        //   content.current.style.backgroundPosition = `75%`;
-        // }
-        // if (progress > 0.8 && progress < 1) {
-        //   content.current.style.backgroundPosition = `100%`;
-        // }
+        if (progress > 0 && progress < 0.33) {
+          content.current.style.backgroundPosition = `25%`;
+        }
+        if (progress > 0.33 && progress < 0.66) {
+          content.current.style.backgroundPosition = `50%`;
+        }
+        if (progress > 0.66 && progress < 0.99) {
+          content.current.style.backgroundPosition = `75%`;
+        }
+        if (progress > 0.99 && progress < 1) {
+          content.current.style.backgroundPosition = `100%`;
+        }
       }
       requestAnimationFrame(frame);
     }
