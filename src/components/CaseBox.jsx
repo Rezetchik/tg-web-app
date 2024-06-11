@@ -227,8 +227,10 @@ function Case() {
           back = back + 25;
           if (back % 2 == 0 && back <= 200) {
             if (back == 50) {
-              content.current.style.backgroundColor = `#000000`;
+              // console.log('color');
+              // content.current.style.backgroundColor = `#000000`;
             }
+            // console.log(back);
             content.current.style.backgroundPosition = `${back / 2}%`;
           }
         } else {
