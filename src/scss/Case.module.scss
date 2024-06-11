@@ -50,7 +50,7 @@
 .ContentAnimate {
   aspect-ratio: 932 / 425;
   position: relative;
-  background-image: url('../assets/case/ruletka/fazi.svg');
+  background-image: url('../assets/case/ruletka/fazometr.svg');
   background-color: #9e6fff;
   background-position: 0%;
   background-size: cover;
@@ -63,7 +63,7 @@
     0% {
       // transform: translate3d(-0.5vh, -0.5vh, 0);
       // rotate: 1deg;
-      background-color: #9e6fff;
+      // background-color: #9e6fff;
     }
     5% {
       // transform: translate3d(0.5vh, 0.5vh, 0);
@@ -71,10 +71,10 @@
       // background-color: #000000;
     }
     9% {
-      background-color: #9e6fff;
+      // background-color: #9e6fff;
     }
     10% {
-      background-color: #000000;
+      // background-color: #000000;
       // transform: translate3d(-0.5vh, -0.5vh, 0);
       // rotate: 1deg;
     }
@@ -129,7 +129,7 @@
       visibility: hidden;
       opacity: 0.2;
       // background-position: 100%;
-      background-color: #000000;
+      // background-color: #000000;
     }
   }
 }
