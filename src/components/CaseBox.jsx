@@ -191,39 +191,46 @@ function Case() {
 
   // const newPerebor = React.useCallback(() => {
   //   const newArr = arr.slice(40);
-  //   const length = 40;
-  //   const numbers = [...Array(length)];
-  //   for (let i = 0; i < numbers.length; i += 1) {
-  //     const chance = Math.random();
-  //     let current = 0;
-  //     for (const item of items) {
-  //       if (current <= chance && chance < current + item.dropChance) {
-  //         numbers[i] = item;
-  //       }
-  //       current += item.dropChance;
-  //     }
-  //   }
-  //   newArr.forEach((e) => {
-  //     delete e.id;
-  //   });
-  //   const mass = newArr.concat(numbers);
-  //   const data = mass.map((item, index) => ({ ...item, id: index + 1 }));
-  //   setArr(data);
+  //   // const length = 40;
+  //   // const numbers = [...Array(length)];
+  //   // for (let i = 0; i < numbers.length; i += 1) {
+  //   //   const chance = Math.random();
+  //   //   let current = 0;
+  //   //   for (const item of items) {
+  //   //     if (current <= chance && chance < current + item.dropChance) {
+  //   //       numbers[i] = item;
+  //   //     }
+  //   //     current += item.dropChance;
+  //   //   }
+  //   // }
+  //   // newArr.forEach((e) => {
+  //   //   delete e.id;
+  //   // });
+  //   // const mass = newArr.concat(numbers);
+  //   // const data = mass.map((item, index) => ({ ...item, id: index + 1 }));
+  //   setArr(newArr);
   // }, [arr]);
 
   React.useEffect(() => {
     if (flag) {
       // newPerebor();
+      let back = 0;
       setFlag(false);
       setRuletka(false);
       function frame(time) {
         if (startTime === null) {
           startTime = time;
         }
-        const progress = (time - startTime) / 1100;
+        const progress = (time - startTime) / 100;
         if (progress < 1) {
           requestAnimationFrame(frame);
+          back = back + 25;
+          if (back % 2 == 0 && back <= 200) {
+            console.log('2');
+            content.current.style.backgroundPosition = `${back / 2}%`;
+          }
         } else {
+          content.current.style.backgroundPosition = `100%`;
           startTime = null;
           function frameFinal(time) {
             if (startTime === null) {
@@ -249,18 +256,18 @@ function Case() {
           setHidden(true);
           requestAnimationFrame(frameFinal);
         }
-        if (progress > 0.1 && progress < 0.35) {
-          content.current.style.backgroundPosition = `25%`;
-        }
-        if (progress > 0.35 && progress < 0.65) {
-          content.current.style.backgroundPosition = `50%`;
-        }
-        if (progress > 0.65 && progress < 0.95) {
-          content.current.style.backgroundPosition = `75%`;
-        }
-        if (progress > 0.95 && progress < 1) {
-          content.current.style.backgroundPosition = `100%`;
-        }
+        // if (progress > 0 && progress < 0.25) {
+        //   content.current.style.backgroundPosition = `25%`;
+        // }
+        // if (progress > 0.25 && progress < 0.55) {
+        //   content.current.style.backgroundPosition = `50%`;
+        // }
+        // if (progress > 0.55 && progress < 0.8) {
+        //   content.current.style.backgroundPosition = `75%`;
+        // }
+        // if (progress > 0.8 && progress < 1) {
+        //   content.current.style.backgroundPosition = `100%`;
+        // }
       }
       requestAnimationFrame(frame);
     }
