@@ -226,7 +226,9 @@ function Case() {
           requestAnimationFrame(frame);
           back = back + 25;
           if (back % 2 == 0 && back <= 200) {
-            console.log('2');
+            if (back == 50) {
+              content.current.style.backgroundColor = `#000000`;
+            }
             content.current.style.backgroundPosition = `${back / 2}%`;
           }
         } else {
