@@ -265,6 +265,7 @@ function Case() {
                         if (startTime === null) {
                           startTime = time;
                           content.current.style.backgroundPosition = `100%`;
+                          setPazl(false);
                           // content.current.style.backgroundPosition = `${-contentWidth * 4}px`;
                         }
                         const progress = (time - startTime) / 2500;
@@ -283,7 +284,7 @@ function Case() {
                           setClickBox(false);
                         }
                       }
-                      setPazl(false);
+                      // setPazl(false);
                       setHidden(true);
                       requestAnimationFrame(frameFinal);
                     }
