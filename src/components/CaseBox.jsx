@@ -214,79 +214,81 @@ function Case() {
   React.useEffect(() => {
     if (flag) {
       // newPerebor();
-      let back = 0;
       setFlag(false);
       setRuletka(false);
       function frame(time) {
         if (startTime === null) {
           startTime = time;
         }
-        const progress = (time - startTime) / 50;
+        const progress = (time - startTime) / 30;
         if (progress < 1) {
           requestAnimationFrame(frame);
-          content.current.style.backgroundPosition = `25%`;
-          // back = back + 25;
-          // if (back % 2 == 0 && back <= 50) {
-          //   if (back == 50) {
-          //     // console.log('color');
-          //     // content.current.style.backgroundColor = `#000000`;
-          //   }
-          //   // console.log(back);
-          //   content.current.style.backgroundPosition = `${back / 2}%`;
-          // }
+          content.current.style.backgroundPosition = `0%`;
         } else {
           startTime = null;
           function frameA(time) {
             if (startTime === null) {
               startTime = time;
             }
-            const progress = (time - startTime) / 50;
+            const progress = (time - startTime) / 30;
             if (progress < 1) {
               requestAnimationFrame(frameA);
-              content.current.style.backgroundPosition = `50%`;
+              content.current.style.backgroundPosition = `25%`;
             } else {
               startTime = null;
               function frameB(time) {
                 if (startTime === null) {
                   startTime = time;
                 }
-                const progress = (time - startTime) / 50;
+                const progress = (time - startTime) / 30;
                 if (progress < 1) {
                   requestAnimationFrame(frameB);
-                  content.current.style.backgroundPosition = `75%`;
+                  content.current.style.backgroundPosition = `50%`;
                 } else {
                   startTime = null;
-                  function frameFinal(time) {
+                  function frameС(time) {
                     if (startTime === null) {
                       startTime = time;
-                      content.current.style.backgroundPosition = `100%`;
                     }
-                    const progress = (time - startTime) / 2500;
+                    const progress = (time - startTime) / 30;
                     if (progress < 1) {
-                      requestAnimationFrame(frameFinal);
+                      requestAnimationFrame(frameС);
+                      content.current.style.backgroundPosition = `75%`;
                     } else {
-                      setHidden(false);
-                      setActive(true);
-                      setRuletka(true);
-                      slider.current.childNodes.forEach((e) => {
-                        e.style = `transform: translateX(0px); transition: 0s`;
-                      });
-                      content.current.style.backgroundPosition = `0%`;
-                      setPazl(true);
-                      Perebor();
-                      setClickBox(false);
+                      startTime = null;
+                      function frameFinal(time) {
+                        if (startTime === null) {
+                          startTime = time;
+                          content.current.style.backgroundPosition = `100%`;
+                        }
+                        const progress = (time - startTime) / 2500;
+                        if (progress < 1) {
+                          requestAnimationFrame(frameFinal);
+                        } else {
+                          setHidden(false);
+                          setActive(true);
+                          setRuletka(true);
+                          slider.current.childNodes.forEach((e) => {
+                            e.style = `transform: translateX(0px); transition: 0s`;
+                          });
+                          content.current.style.backgroundPosition = `0%`;
+                          setPazl(true);
+                          Perebor();
+                          setClickBox(false);
+                        }
+                      }
+                      setPazl(false);
+                      setHidden(true);
+                      requestAnimationFrame(frameFinal);
                     }
                   }
-                  setPazl(false);
-                  setHidden(true);
-                  requestAnimationFrame(frameFinal);
+                  requestAnimationFrame(frameС);
                 }
               }
               requestAnimationFrame(frameB);
             }
           }
           requestAnimationFrame(frameA);
-          // function frameFinal(time) {
           //   if (startTime === null) {
           //     startTime = time;
           //     content.current.style.backgroundPosition = `100%`;
@@ -312,18 +314,6 @@ function Case() {
           // setHidden(true);
           // requestAnimationFrame(frameFinal);
         }
-        // if (progress > 0 && progress < 0.33) {
-        //   content.current.style.backgroundPosition = `25%`;
-        // }
-        // if (progress > 0.33 && progress < 0.66) {
-        //   content.current.style.backgroundPosition = `50%`;
-        // }
-        // if (progress > 0.66 && progress < 0.99) {
-        //   content.current.style.backgroundPosition = `75%`;
-        // }
-        // if (progress > 0.99 && progress < 1) {
-        //   content.current.style.backgroundPosition = `100%`;
-        // }
       }
       requestAnimationFrame(frame);
     }

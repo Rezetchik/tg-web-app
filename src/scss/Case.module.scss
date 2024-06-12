@@ -42,7 +42,6 @@
     aspect-ratio: 932 / 425;
     position: relative;
     background-color: #9e6fff;
-    background-size: 100% 100%;
     border: 0.89vh solid #00c7b1;
   }
 }
@@ -51,70 +50,16 @@
   aspect-ratio: 932 / 425;
   position: relative;
   background-image: url('../assets/case/ruletka/fazometr.svg');
-  background-size: 100% 100%;
   background-color: #9e6fff;
   background-position: 0%;
   background-size: cover;
   border: 0.89vh solid #00c7b1;
-  will-change: transform, rotate, background-position, opacity;
+  will-change: background-color, background-position, opacity;
   // animation: 3000ms shakingContent forwards;
   animation: 1500ms shakingContent forwards;
 
   @keyframes shakingContent {
     0% {
-      // transform: translate3d(-0.5vh, -0.5vh, 0);
-      // rotate: 1deg;
-      // background-color: #9e6fff;
-    }
-    5% {
-      // transform: translate3d(0.5vh, 0.5vh, 0);
-      // rotate: -1deg;
-      // background-color: #000000;
-    }
-    9% {
-      // background-color: #9e6fff;
-    }
-    10% {
-      // background-color: #000000;
-      // transform: translate3d(-0.5vh, -0.5vh, 0);
-      // rotate: 1deg;
-    }
-    // 15% {
-    //   transform: translate3d(0.5vh, 0.5vh, 0);
-    //   rotate: -1deg;
-    // }
-    // 20% {
-    //   transform: translate3d(-0.5vh, -0.5vh, 0);
-    //   rotate: 1deg;
-    // }
-    // 25% {
-    //   transform: translate3d(0.5vh, 0.5vh, 0);
-    //   rotate: -1deg;
-    // }
-    // 30% {
-    //   transform: translate3d(-0.5vh, -0.5vh, 0);
-    //   rotate: 1deg;
-    // }
-    // 35% {
-    //   transform: translate3d(0.5vh, 0.5vh, 0);
-    //   rotate: -1deg;
-    // }
-    // 39% {
-    //   background-color: #000000;
-    // }
-    40% {
-      // background-color: #000000;
-      // transform: translate3d(-0.5vh, -0.5vh, 0);
-      // rotate: 1deg;
-    }
-    // 45% {
-    //   transform: translate3d(0.5vh, 0.5vh, 0);
-    //   rotate: -1deg;
-    // }
-    50% {
-      // background-color: #000000;
-      // transform: translate3d(-0.5vh, -0.5vh, 0);
-      // rotate: 1deg;
     }
     75% {
       transform: scale(1) translate3d(0, 0, 0);
@@ -125,13 +70,10 @@
       transform: translate3d(0, 3vh, 0) scale(0.2);
       opacity: 0.2;
       visibility: hidden;
-      // background-color: #9e6fff;
     }
     100% {
       visibility: hidden;
       opacity: 0.2;
-      // background-position: 100%;
-      // background-color: #000000;
     }
   }
 }
@@ -141,7 +83,7 @@
   overflow: hidden;
   height: 100%;
   // animation: 1500ms shakingRuletka 300ms forwards;
-  animation: 200ms shakingRuletka forwards;
+  animation: 150ms shakingRuletka forwards;
 
   // @keyframes shakingRuletka {
   //   0% {
@@ -259,7 +201,7 @@
     border: 0.21vh solid #000000;
   }
 
-  animation: 200ms shakingCursor forwards;
+  animation: 150ms shakingCursor forwards;
 
   @keyframes shakingCursor {
     0% {
@@ -270,42 +212,6 @@
     }
   }
 }
-
-// .CursorAnimate {
-//   position: absolute;
-//   transform: translate(-50%, -50%);
-//   top: 50%;
-//   left: 50%;
-//   height: 115.76%;
-//   width: 0.21vh;
-//   border: 0.21vh solid #000000;
-//   background-color: #6affef;
-//   box-sizing: content-box;
-
-//   // animation: 1500ms shakingCursor 500ms forwards;
-//   animation: 75ms shakingCursor forwards;
-
-//   // @keyframes shakingCursor {
-//   //   0% {
-//   //     rotate: 1deg;
-//   //   }
-//   //   70% {
-//   //     rotate: 25deg;
-//   //   }
-//   //   100% {
-//   //     visibility: hidden;
-//   //     transform: translate3d(30vh, 100vh, 0);
-//   //   }
-//   // }
-//   @keyframes shakingCursor {
-//     0% {
-//     }
-//     100% {
-//       visibility: hidden;
-//       // transform: scale(10);
-//     }
-//   }
-// }
 
 // .Button {
 //   display: block;
