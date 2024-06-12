@@ -214,16 +214,18 @@ function Case() {
   React.useEffect(() => {
     if (flag) {
       // newPerebor();
+      const contentWidth = content.current.clientWidth;
       setFlag(false);
       setRuletka(false);
       function frame(time) {
         if (startTime === null) {
           startTime = time;
         }
-        const progress = (time - startTime) / 30;
+        const progress = (time - startTime) / 50;
         if (progress < 1) {
           requestAnimationFrame(frame);
           content.current.style.backgroundPosition = `0%`;
+          // content.current.style.backgroundPosition = `${-contentWidth}px`;
         } else {
           startTime = null;
           function frameA(time) {
@@ -233,7 +235,8 @@ function Case() {
             const progress = (time - startTime) / 30;
             if (progress < 1) {
               requestAnimationFrame(frameA);
-              content.current.style.backgroundPosition = `25%`;
+              // content.current.style.backgroundPosition = `25%`;
+              content.current.style.backgroundPosition = `${-contentWidth}px`;
             } else {
               startTime = null;
               function frameB(time) {
@@ -243,7 +246,8 @@ function Case() {
                 const progress = (time - startTime) / 30;
                 if (progress < 1) {
                   requestAnimationFrame(frameB);
-                  content.current.style.backgroundPosition = `50%`;
+                  // content.current.style.backgroundPosition = `50%`;
+                  content.current.style.backgroundPosition = `${-contentWidth * 2}px`;
                 } else {
                   startTime = null;
                   function frameС(time) {
@@ -253,13 +257,15 @@ function Case() {
                     const progress = (time - startTime) / 30;
                     if (progress < 1) {
                       requestAnimationFrame(frameС);
-                      content.current.style.backgroundPosition = `75%`;
+                      // content.current.style.backgroundPosition = `75%`;
+                      content.current.style.backgroundPosition = `${-contentWidth * 3}px`;
                     } else {
                       startTime = null;
                       function frameFinal(time) {
                         if (startTime === null) {
                           startTime = time;
                           content.current.style.backgroundPosition = `100%`;
+                          // content.current.style.backgroundPosition = `${-contentWidth * 4}px`;
                         }
                         const progress = (time - startTime) / 2500;
                         if (progress < 1) {
