@@ -347,6 +347,9 @@
   @keyframes shakingPazl {
     0% {
     }
+    50% {
+      visibility: hidden;
+    }
     100% {
       visibility: hidden;
       transform: scale(4, 10);

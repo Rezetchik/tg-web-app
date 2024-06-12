@@ -221,11 +221,12 @@ function Case() {
         if (startTime === null) {
           startTime = time;
         }
-        const progress = (time - startTime) / 200;
+        const progress = (time - startTime) / 50;
         if (progress < 1) {
           requestAnimationFrame(frame);
+          content.current.style.backgroundPosition = `25%`;
           // back = back + 25;
-          // if (back % 2 == 0 && back <= 200) {
+          // if (back % 2 == 0 && back <= 50) {
           //   if (back == 50) {
           //     // console.log('color');
           //     // content.current.style.backgroundColor = `#000000`;
@@ -235,66 +236,97 @@ function Case() {
           // }
         } else {
           startTime = null;
-          function frameFinal(time) {
+          function frameA(time) {
             if (startTime === null) {
               startTime = time;
-              content.current.style.backgroundPosition = `100%`;
             }
-            const progress = (time - startTime) / 2500;
+            const progress = (time - startTime) / 50;
             if (progress < 1) {
-              requestAnimationFrame(frameFinal);
+              requestAnimationFrame(frameA);
+              content.current.style.backgroundPosition = `50%`;
             } else {
-              setHidden(false);
-              setActive(true);
-              setRuletka(true);
-              slider.current.childNodes.forEach((e) => {
-                e.style = `transform: translateX(0px); transition: 0s`;
-              });
-              content.current.style.backgroundPosition = `0%`;
-              // content.current.style.transform = `scale(1)`;
-              setPazl(true);
-              Perebor();
-              setClickBox(false);
+              startTime = null;
+              function frameB(time) {
+                if (startTime === null) {
+                  startTime = time;
+                }
+                const progress = (time - startTime) / 50;
+                if (progress < 1) {
+                  requestAnimationFrame(frameB);
+                  content.current.style.backgroundPosition = `75%`;
+                } else {
+                  startTime = null;
+                  function frameFinal(time) {
+                    if (startTime === null) {
+                      startTime = time;
+                      content.current.style.backgroundPosition = `100%`;
+                    }
+                    const progress = (time - startTime) / 2500;
+                    if (progress < 1) {
+                      requestAnimationFrame(frameFinal);
+                    } else {
+                      setHidden(false);
+                      setActive(true);
+                      setRuletka(true);
+                      slider.current.childNodes.forEach((e) => {
+                        e.style = `transform: translateX(0px); transition: 0s`;
+                      });
+                      content.current.style.backgroundPosition = `0%`;
+                      setPazl(true);
+                      Perebor();
+                      setClickBox(false);
+                    }
+                  }
+                  setPazl(false);
+                  setHidden(true);
+                  requestAnimationFrame(frameFinal);
+                }
+              }
+              requestAnimationFrame(frameB);
             }
           }
-          setPazl(false);
-          setHidden(true);
-          requestAnimationFrame(frameFinal);
+          requestAnimationFrame(frameA);
+          // function frameFinal(time) {
+          //   if (startTime === null) {
+          //     startTime = time;
+          //     content.current.style.backgroundPosition = `100%`;
+          //   }
+          //   const progress = (time - startTime) / 2500;
+          //   if (progress < 1) {
+          //     requestAnimationFrame(frameFinal);
+          //   } else {
+          //     setHidden(false);
+          //     setActive(true);
+          //     setRuletka(true);
+          //     slider.current.childNodes.forEach((e) => {
+          //       e.style = `transform: translateX(0px); transition: 0s`;
+          //     });
+          //     content.current.style.backgroundPosition = `0%`;
+          //     // content.current.style.transform = `scale(1)`;
+          //     setPazl(true);
+          //     Perebor();
+          //     setClickBox(false);
+          //   }
+          // }
+          // setPazl(false);
+          // setHidden(true);
+          // requestAnimationFrame(frameFinal);
         }
-        if (progress > 0 && progress < 0.33) {
-          content.current.style.backgroundPosition = `25%`;
-        }
-        if (progress > 0.33 && progress < 0.66) {
-          content.current.style.backgroundPosition = `50%`;
-        }
-        if (progress > 0.66 && progress < 0.99) {
-          content.current.style.backgroundPosition = `75%`;
-        }
-        if (progress > 0.99 && progress < 1) {
-          content.current.style.backgroundPosition = `100%`;
-        }
+        // if (progress > 0 && progress < 0.33) {
+        //   content.current.style.backgroundPosition = `25%`;
+        // }
+        // if (progress > 0.33 && progress < 0.66) {
+        //   content.current.style.backgroundPosition = `50%`;
+        // }
+        // if (progress > 0.66 && progress < 0.99) {
+        //   content.current.style.backgroundPosition = `75%`;
+        // }
+        // if (progress > 0.99 && progress < 1) {
+        //   content.current.style.backgroundPosition = `100%`;
+        // }
       }
       requestAnimationFrame(frame);
     }
-    // if (flag) {
-    //   setFlag(false);
-    //   setRuletka(false);
-    //   setTimeout(() => {
-    //     setPazl(false);
-    //     setHidden(true);
-    //   }, 1100);
-    //   setTimeout(() => {
-    //     setHidden(false);
-    //     setActive(true);
-    //     setRuletka(true);
-    //     slider.current.childNodes.forEach((e) => {
-    //       e.style = `transform: translateX(0px); transition: 0s`;
-    //     });
-    //     setPazl(true);
-    //     Perebor();
-    //     setClickBox(false);
-    //   }, 3500);
-    // }
   }, [flag]);
 
   React.useEffect(() => {
