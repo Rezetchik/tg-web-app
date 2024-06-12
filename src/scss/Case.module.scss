@@ -41,9 +41,7 @@
   .Content {
     aspect-ratio: 932 / 425;
     position: relative;
-    // background-image: url('../assets/case/ruletka/fazi.svg');
     background-color: #9e6fff;
-    background-position: 0%;
     background-size: 100% 100%;
     border: 0.89vh solid #00c7b1;
   }
@@ -53,6 +51,7 @@
   aspect-ratio: 932 / 425;
   position: relative;
   background-image: url('../assets/case/ruletka/fazometr.svg');
+  background-size: 100% 100%;
   background-color: #9e6fff;
   background-position: 0%;
   background-size: cover;
