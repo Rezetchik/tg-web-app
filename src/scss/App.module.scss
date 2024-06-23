@@ -5,6 +5,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('../fonts/CoolveticaRg-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pixeldigivolve';
+  src: url('../fonts/Pixeldigivolvecyrillic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+// @font-face {
+//   font-family: 'CoolveticaReular';
+//   src: url('../fonts/CoolveticaBk-Regular.ttf') format('truetype');
+//   font-weight: 700;
+//   font-style: normal;
+// }
+
 .App {
   min-height: 100vh;
   max-width: 100vw;
@@ -22,6 +43,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  // overflow: hidden;
 }
 
 .FrameWrapper {
@@ -48,8 +70,18 @@
   }
 
   .Text {
+    // @media (orientation: portrait) {
+    //   font-size: clamp(12px, 2.69vw, 100px);
+    // }
+    // @media (orientation: landscape) {
+    //   font-size: clamp(12px, 1.5vh, 100px);
+    // }
+
     @media (orientation: portrait) {
-      font-size: clamp(12px, 2.69vw, 100px);
+      font-size: clamp(12px, 2.67vw, 100px);
+    }
+    @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+      font-size: clamp(12px, 1.5vh, 100px);
     }
     @media (orientation: landscape) {
       font-size: clamp(12px, 1.5vh, 100px);
@@ -60,6 +92,9 @@
   .TextLeft {
     @media (orientation: portrait) {
       font-size: clamp(8px, 1.6vw, 100px);
+    }
+    @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+      font-size: clamp(8px, 0.9vh, 100px);
     }
     @media (orientation: landscape) {
       font-size: clamp(8px, 0.9vh, 100px);

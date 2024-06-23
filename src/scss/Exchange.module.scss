@@ -1,0 +1,203 @@
+.Frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.Wrapper {
+  max-height: 100vh;
+  margin: 0 auto;
+  aspect-ratio: 1080 / 1920;
+  position: relative;
+  padding-top: 1px;
+}
+
+.Container {
+  margin-top: 12.4vh;
+  padding: 0 6.94%;
+
+  @media (orientation: portrait) {
+    height: 93.43vw;
+  }
+  @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+    height: 52.55vh;
+  }
+  @media (orientation: landscape) {
+    height: 52.55vh;
+  }
+}
+
+.Block {
+  width: 100%;
+  height: 66.09vh;
+  position: relative;
+
+  .Header {
+    height: 31.84%;
+
+    .Icon {
+      display: block;
+      margin: 0 auto;
+      height: 100%;
+    }
+  }
+
+  .Text {
+    margin-top: 5.48%;
+    height: 12.53%;
+    position: relative;
+    text-align: center;
+
+    .H1 {
+      font-family: 'Coolvetica';
+      color: #00c7b1;
+
+      @media (orientation: portrait) {
+        font-size: clamp(1px, 4.63vw, 100px);
+      }
+      @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+        font-size: clamp(1px, 2.6vh, 100px);
+      }
+      @media (orientation: landscape) {
+        font-size: clamp(1px, 2.6vh, 100px);
+      }
+    }
+
+    .H2 {
+      font-family: 'Tactic Sans';
+      color: #000000;
+      white-space: nowrap;
+
+      @media (orientation: portrait) {
+        font-size: clamp(1px, 7.09vw, 200px);
+      }
+      @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+        font-size: clamp(1px, 3.99vh, 200px);
+      }
+      @media (orientation: landscape) {
+        font-size: clamp(1px, 3.99vh, 200px);
+      }
+    }
+  }
+
+  .ProgressDiv {
+    margin-top: 5.48%;
+    height: 47.6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .Progress {
+      height: 29.47%;
+      position: relative;
+      background-color: #ffffff;
+
+      @media (orientation: portrait) {
+        border: 0.65vw solid #00c7b1;
+        border-left: 1.85vw solid #00c7b1;
+      }
+      @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+        border: 0.37vh solid #00c7b1;
+        border-left: 1.04vh solid #00c7b1;
+      }
+      @media (orientation: landscape) {
+        border: 0.37vh solid #00c7b1;
+        border-left: 1.04vh solid #00c7b1;
+      }
+
+      .ProgressText {
+        // margin: 3.96% auto 0;
+        position: absolute;
+        top: 45%;
+        right: 50%;
+        transform: translate(50%, -55%);
+        // margin: 0 auto;
+        // height: 50%;
+        width: 87%;
+        display: flex;
+        justify-content: space-between;
+
+        .FREEBET {
+          display: flex;
+          align-items: flex-end;
+          padding-bottom: 1.28%;
+
+          span {
+            color: #00c7b1;
+            @media (orientation: portrait) {
+              font-size: clamp(1px, 7.41vw, 100px);
+            }
+            @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+              font-size: clamp(1px, 4.17vh, 100px);
+            }
+            @media (orientation: landscape) {
+              font-size: clamp(1px, 4.17vh, 100px);
+            }
+          }
+        }
+
+        .Value {
+          display: flex;
+          align-items: baseline;
+
+          .Nominal {
+            @media (orientation: portrait) {
+              font-size: clamp(1px, 11.11vw, 100px);
+            }
+            @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+              font-size: clamp(1px, 6.25vh, 100px);
+            }
+            @media (orientation: landscape) {
+              font-size: clamp(1px, 6.25vh, 100px);
+            }
+          }
+
+          .Valute {
+            @media (orientation: portrait) {
+              font-size: clamp(1px, 7.41vw, 100px);
+            }
+            @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+              font-size: clamp(1px, 4.17vh, 100px);
+            }
+            @media (orientation: landscape) {
+              font-size: clamp(1px, 4.17vh, 100px);
+            }
+          }
+        }
+
+        span {
+          font-family: 'Pixeldigivolve';
+        }
+      }
+
+      .StrikeMass {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 16.29%;
+        padding: 0 0.33% 0.33%;
+        display: flex;
+        justify-content: space-between;
+
+        .Strike {
+          height: 100%;
+          width: calc((100% / 18) * 0.927);
+        }
+      }
+    }
+
+    .ProgressDone {
+      @extend .Progress;
+
+      @media (orientation: portrait) {
+        filter: drop-shadow(0 0 3.25vw #00c7b1);
+      }
+      @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
+        filter: drop-shadow(0 0 2vh #00c7b1);
+      }
+      @media (orientation: landscape) {
+        filter: drop-shadow(0 0 2vh #00c7b1);
+      }
+    }
+  }
+}
