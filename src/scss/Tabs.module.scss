@@ -14,7 +14,7 @@
   z-index: 1;
 
   .Tabs {
-    aspect-ratio: 222 / 195;
+    // aspect-ratio: 222 / 195;
     width: 24%;
     background-color: #00c7b1;
     display: flex;
@@ -26,12 +26,15 @@
     -webkit-tap-highlight-color: transparent;
     @media (orientation: portrait) {
       border: 1.11vw solid transparent;
+      height: 18.06vw;
     }
     @media (min-aspect-ratio: 1080/1920) and (max-aspect-ratio: 1/1) {
       border: 0.625vh solid transparent;
+      height: 10.16vh;
     }
     @media (orientation: landscape) {
       border: 0.625vh solid transparent;
+      height: 10.16vh;
     }
 
     .TabsIcon {
